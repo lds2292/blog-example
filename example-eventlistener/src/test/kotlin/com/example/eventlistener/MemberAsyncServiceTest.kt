@@ -36,4 +36,11 @@ class MemberAsyncServiceTest{
         assertEquals(1, emailJpaRepository.findAll().size)
     }
 
+    @Test
+    fun `이벤트 수신하는 서비스에서 오류가 발생할 경우 수신쪽 데이터는 롤백된다`(){
+        memberService.save("오류", "오류")
+        assertEquals(1, memberJpaRepository.findAll().size)
+        assertEquals(0, emailJpaRepository.findAll().size)
+    }
+
 }

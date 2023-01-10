@@ -21,4 +21,14 @@ class MemberService(
         val savedMember = memberJpaRepository.save(member)
         publisher.publishEvent(SavedMemberEvent(savedMember))
     }
+
+    fun signup(name: String){
+        val member = Member(name, "$name@gmail.com")
+        logger.info("step 1")
+        publisher.publishEvent(SavedMemberEvent(member))
+        logger.info("step 2")
+        logger.info("step 3")
+
+        if (name == "오류") throw RuntimeException("에러")
+    }
 }

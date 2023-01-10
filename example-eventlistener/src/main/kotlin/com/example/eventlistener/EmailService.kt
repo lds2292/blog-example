@@ -15,7 +15,8 @@ class EmailService(
     private val logger : Logger = LoggerFactory.getLogger(this::class.java)
 
     fun send(email : String, message : String) : Email {
-        val savedEmail = Email(email, message)
-        return emailJpaRepository.save(savedEmail)
+        val savedEmail = emailJpaRepository.save(Email(email, message))
+        if (email == "오류") throw RuntimeException("오류발생!")
+        return savedEmail
     }
 }
