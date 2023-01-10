@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    org.hibernate.SQL: debug
