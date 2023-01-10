@@ -17,7 +17,6 @@ class MemberService(
     private val logger : Logger = LoggerFactory.getLogger(this::class.java)
 
     fun save(name : String, email: String) {
-        logger.info("MemberService.save called")
         val member = Member(name, email)
         val savedMember = memberJpaRepository.save(member)
         publisher.publishEvent(SavedMemberEvent(savedMember))

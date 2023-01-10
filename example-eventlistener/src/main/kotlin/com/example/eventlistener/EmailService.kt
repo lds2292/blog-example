@@ -15,7 +15,6 @@ class EmailService(
     private val logger : Logger = LoggerFactory.getLogger(this::class.java)
 
     fun send(email : String, message : String) : Email {
-        logger.info("EmailService.send called!")
         val savedEmail = Email(email, message)
         return emailJpaRepository.save(savedEmail)
     }

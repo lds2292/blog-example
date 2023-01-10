@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.EnableAsync
 
 @SpringBootApplication
 @EntityScan(basePackages = ["com.example"])
-@EnableAsync
 class EventListenerApplication
 
 fun main(args: Array<String>) {

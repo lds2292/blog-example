@@ -13,6 +13,7 @@ allprojects{
     version = "0.0.1-SNAPSHOT"
 
     repositories {
+        maven(url = "https://repo.smartfoodnet.com/repository/maven/")
         mavenCentral()
     }
 }
